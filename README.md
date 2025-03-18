@@ -5,7 +5,7 @@ This research project implements a hybrid optimization methodology that progress
 **This project was a collaborative effort by Team Matrix, consisting of three team members:**
 1. Owais Hussain: [GitHub](https://github.com/owais-syed) , [LinkedIn](https://www.linkedin.com/feed/)
 2. Jyothindra Pallikonda: [Git Hub](https://github.com/jyothindrapallikonda)  , [Linkedin](https://www.linkedin.com/in/jyothindrapallikonda/) 
-3. Minorah Palli: 
+3. Minorah Palli: [GitHub](https://github.com/Minorah-7)  , [Linkedin](https://www.linkedin.com/in/minorah-palli-01b286266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ## Project Overview
 This project focuses on optimizing the EleutherAI GPT-Neo 1.3B model for a text summarization task using the CNN/DailyMail dataset. The goal is to enhance efficiency by reducing inference time and memory usage while maintaining or improving accuracy. We explore various optimization techniques, including LoRA fine-tuning and quantization, and compare their performance to determine the best approach for real-world deployment.

@@ -17,35 +17,20 @@ In this step, we benchmark the performance of the EleutherAI GPT-Neo 1.3B model 
 The results from this benchmarking serve as a reference for evaluating future optimizations. By understanding the initial performance, we can measure improvements in efficiency and accuracy as we implement techniques like quantization and LoRA fine-tuning in the next steps.
 
 ### Benchmark Results (CPU)
-- **Inference Time:** 92.58 seconds
-- **Memory Used:** 7288.12 MB
-- **ROUGE Score:**
-  - ROUGE-1: 0.0948
-  - ROUGE-2: 0.0552
-  - ROUGE-L: 0.0795
-  - ROUGE-Lsum: 0.0826
+![BM-Basemodel](https://github.com/user-attachments/assets/c05c29a8-59cc-4a48-b6e9-ee634e3d0768)
+
 
 # Step 2: Applying LoRA Fine-Tuning and Benchmarking
 
 In this step, we optimize the model using LoRA (Low-Rank Adaptation) fine-tuning. We adjust the rank, dropout, and scaling parameters to enhance efficiency. The goal is to reduce inference time while maintaining or improving the model's performance.
 
 ### Benchmark Results (Optimized Model) - Approach 1
-- **Inference Time:** 208.19 seconds
-- **Memory Used:** 5861.79 MB
-- **ROUGE Score:**
-  - ROUGE-1: 0.1258
-  - ROUGE-2: 0.0758
-  - ROUGE-L: 0.0964
-  - ROUGE-Lsum: 0.0964
+![BM-stage 2-Approch 1](https://github.com/user-attachments/assets/376989bf-e76f-4fc6-8653-2f4976009584)
+
 
 ### Benchmark Results (Optimized Model) - Approach 2
-- **Inference Time:** 46.26 seconds
-- **Memory Used:** 8698.58 MB
-- **ROUGE Score:**
-  - ROUGE-1: 0.2895
-  - ROUGE-2: 0.1733
-  - ROUGE-L: 0.2632
-  - ROUGE-Lsum: 0.2632
+![BM-stage 2- Approch 2](https://github.com/user-attachments/assets/649aad69-f7cf-410f-bb1a-3786490cb97e)
+
 
 The results indicate that Approach 2 significantly improves inference time and accuracy at the cost of higher memory usage. However, the increased memory usage presents a drawback, so we will be moving to Step 3 to explore quantization techniques to further optimize performance while reducing memory consumption.
 
@@ -54,28 +39,15 @@ The results indicate that Approach 2 significantly improves inference time and a
 In this step, we incorporate quantization techniques to optimize the model further. We experiment with FP16 precision to balance performance and memory efficiency. The primary objective is to reduce memory usage while maintaining acceptable inference speed and accuracy.
 
 ### Benchmark Results (Optimized Model) - Approach 3
-- **Inference Time:** 319.27 seconds
-- **Memory Used:** 4761.81 MB
-- **ROUGE Score:**
-  - ROUGE-1: 0.0948
-  - ROUGE-2: 0.0552
-  - ROUGE-L: 0.0795
-  - ROUGE-Lsum: 0.0826
+![BM=stage 3 - approch 3](https://github.com/user-attachments/assets/ab12384c-7572-4a81-85bb-a1109ff1ce2c)
 
 This approach successfully reduces memory consumption but comes at the expense of increased inference time. Further optimizations will be explored to balance both aspects effectively.
 
 # Step 4: Hybrid Approach - Combining LoRA and Quantization
 
 To achieve an optimal balance between inference time, memory efficiency, and accuracy, we combine LoRA fine-tuning with quantization. This hybrid approach leverages the benefits of LoRA’s accuracy improvements while utilizing quantization to reduce memory consumption.
+![BM-stage 4- Approch 4](https://github.com/user-attachments/assets/6eac9547-ba83-4736-80f6-8c3f71415d36)
 
-### Benchmark Results (Optimized Model) - Approach 4
-- **Inference Time:** 78.42 seconds
-- **Memory Used:** 5289.56 MB
-- **ROUGE Score:**
-  - ROUGE-1: 0.2154
-  - ROUGE-2: 0.1387
-  - ROUGE-L: 0.1986
-  - ROUGE-Lsum: 0.1986
 
 The results indicate that this approach significantly reduces inference time compared to quantization alone while also improving memory efficiency compared to LoRA-only methods. This makes it a more practical choice for real-world applications.
 
